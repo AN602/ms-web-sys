@@ -1,0 +1,25 @@
+{
+  "name": "ms-web-sys",
+  "version": "1.0.0",
+  "description": "Test environment for usage of web technologies and their cross browser compability",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "gulp": "^3.9.1",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AN602/ms-web-sys.git"
+  },
+  "author": "Maximilian Speil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AN602/ms-web-sys/issues"
+  },
+  "homepage": "https://github.com/AN602/ms-web-sys#readme"
+}
