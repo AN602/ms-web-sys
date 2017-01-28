@@ -1,0 +1,36 @@
+/* General Layout Settings */
+$xs: 320px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1440px;
+
+$xs-md: 320px 768px;
+$xs-lg: 320px 1024px;
+$xs-xl: 320px 1440px;
+$md-lg: 768px 1024px;
+$md-xl: 768px 1440px;
+$lg-xl: 1024px 1440px;
+
+$xs-pad: 0 10px;
+$md-pad: 0 24px;
+$lg-pad: 0 32px;
+$xl-pad: 0 40px;
+
+body {
+  display: block;
+  width: $xs;
+  margin: 10px auto;
+  padding: $xs-pad;
+  @include breakpoint($md-lg) {
+    width: $md;
+    padding: $md-pad;
+  }
+  @include breakpoint($lg-xl) {
+    width: $lg;
+    padding: $lg-pad;
+  }
+  @include breakpoint($xl) {
+    width: $xl;
+    padding: $xl-pad;
+  }
+}

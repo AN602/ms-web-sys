@@ -1,42 +1,47 @@
+// load packages
 var gulp = require('gulp'),
-    changed = require('gulp-changed'),
-    jshint = require ('gulp-jshint'),
-    concat = require ('gulp-concat'),
-    uglify = require ('gulp-uglify'),
-    rename = require('gulp-rename'),
-    imagemin = require ('gulp-imagemin'),
-    clean = require('gulp-clean'),
-    sourcemaps = require('gulp-sourcemaps'),
-    minifyhtml = require ('gulp-minify-html'),
-    autoprefixer = require ('gulp-autoprefixer'),
-    minifyCSS = require ('gulp-minify-css'),
-    sass = require('gulp-sass');
+    util = require('gulp-util'),
+    del = require('del'),
+    ts = require('gulp-typescript'),
+    sass = require('gulp-sass'),
+    sassLint = require('gulp-sass-lint'),
+    sourcemaps = require('gulp-sourcemaps');
 
-// config
-var npmPath = 'node_modules/';
-var srcDir = './src/main/web/';
-var conf = {
-    paths: {
-        vendorjs: [
-            'node_modules/angular/angular.js',
-        ],
-        scripts: '**/*.js',
-        tsScripts: '**/*.ts',
-        html: '**/*.html',
-        scss: '**/*.scss',
-        styles: 'scss/style.scss',
-        dist: './target/classes/static/',
-        thymeleafTemplatesCompiled: './target/classes/templates'
-    }
-};
+// create tasks
+gulp.task('default', ['copy-html', 'build-css', 'sass-lint']);
 
-gulp.task('style', function () {
-    return gulp.src(conf.paths.styles, {cwd: srcDir})
-        .pipe(sourcemaps.init())
-        .pipe(sass({includePaths: npmPath, outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(conf.paths.dist));
+gulp.task('clean', function () {
+    return del(['public/**']);
 });
 
-gulp.task('default', ['build']);
-gulp.task('build', ['style']);
+gulp.task('copy-html', function() {
+    // copy any html files in source/ to public/
+    gulp.src('source/**/*.html').pipe(gulp.dest('public'));
+});
+
+gulp.task('build-css', function() {
+    return gulp.src('source/scss/style.scss')
+        .pipe(sourcemaps.init())  // Process the original sources
+        .pipe(sass())
+        .pipe(sourcemaps.write()) // Add the map to modified source.
+        .pipe(gulp.dest('public/assets'));
+});
+
+gulp.task('sass-lint', function () {
+   return gulp.src('source/scss/**/*.scss')
+       .pipe(sassLint())
+       .pipe(sassLint.format());
+});
+
+gulp.task("typescript", function () {
+    gulp.src("source/angular/**/*.ts")
+        .pipe(ts({
+            noImplicitAny: false,
+            noEmitOnError: true,
+            removeComments: false,
+            sourceMap: true,
+            out: "app.js",
+            target: "es5"
+        }))
+        .pipe(gulp.dest("public"));
+});

@@ -1,27 +1,8 @@
 {
   "name": "ms-web-sys",
   "version": "1.0.0",
-  "description": "Test environment for usage of web technologies and their cross browser compability",
-  "main": "index.js",
-  "dependencies": {
-    "angular": "^1.6.1",
-    "gulp": "^3.9.1",
-    "scss": "^0.2.4"
-  },
-  "devDependencies": {
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-changed": "^1.3.2",
-    "gulp-clean": "^0.3.2",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-jshint": "^2.0.4",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-minify-html": "^1.0.6",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.4"
-  },
+  "description": "Test environment for new web technologies and their corss browser compability",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,10 +10,29 @@
     "type": "git",
     "url": "git+https://github.com/AN602/ms-web-sys.git"
   },
+  "keywords": [
+    "scss",
+    "angular",
+    "typescript"
+  ],
   "author": "Maximilian Speil",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AN602/ms-web-sys/issues"
   },
-  "homepage": "https://github.com/AN602/ms-web-sys#readme"
+  "homepage": "https://github.com/AN602/ms-web-sys#readme",
+  "devDependencies": {
+    "@types/angular": "^1.6.2",
+    "angular": "^1.6.1",
+    "breakpoint-sass": "^2.7.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sass-lint": "^1.3.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-typescript": "^3.1.3",
+    "gulp-util": "^3.0.8",
+    "typescript": "^2.1.4",
+    "typings": "^2.1.0"
+  }
 }
