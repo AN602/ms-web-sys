@@ -1,4 +1,5 @@
-/* General Layout Settings */
+// General Layout Settings
+
 $xs: 320px;
 $md: 768px;
 $lg: 1024px;
@@ -18,19 +19,19 @@ $xl-pad: 0 40px;
 
 body {
   display: block;
-  width: $xs;
   margin: 10px auto;
   padding: $xs-pad;
+  width: $xs;
   @include breakpoint($md-lg) {
-    width: $md;
     padding: $md-pad;
+    width: $md;
   }
   @include breakpoint($lg-xl) {
-    width: $lg;
     padding: $lg-pad;
+    width: $lg;
   }
   @include breakpoint($xl) {
-    width: $xl;
     padding: $xl-pad;
+    width: $xl;
   }
 }

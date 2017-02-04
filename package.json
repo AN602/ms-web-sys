@@ -4,7 +4,8 @@
   "description": "Test environment for new web technologies and their corss browser compability",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-typescript": "^3.1.3",
     "gulp-util": "^3.0.8",
+    "lite-server": "^2.2.2",
     "typescript": "^2.1.4",
     "typings": "^2.1.0"
   }
