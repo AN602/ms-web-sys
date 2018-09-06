@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WebGlContainerComponent } from './web-gl-container/web-gl-container.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WebGlContainerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
