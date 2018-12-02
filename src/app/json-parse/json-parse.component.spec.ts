@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WebGlContainerComponent } from './web-gl-container.component';
+import { JsonParseComponent } from './json-parse.component';
 
-describe('WebGlContainerComponent', () => {
-  let component: WebGlContainerComponent;
-  let fixture: ComponentFixture<WebGlContainerComponent>;
+describe('JsonParseComponent', () => {
+  let component: JsonParseComponent;
+  let fixture: ComponentFixture<JsonParseComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WebGlContainerComponent ]
+      declarations: [ JsonParseComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WebGlContainerComponent);
+    fixture = TestBed.createComponent(JsonParseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
